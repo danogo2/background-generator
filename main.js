@@ -1,12 +1,8 @@
 // ======== DOM caching =======
 const colOne = document.getElementById('col1'),
   colTwo = document.getElementById('col2'),
-  colHeading = document.getElementById('col3'),
-  colHShadow = document.getElementById('col4'),
   pal1 = document.getElementById('palette1'),
   pal2 = document.getElementById('palette2'),
-  palHdgCol = document.getElementById('palette3'),
-  palHdgShad = document.getElementById('palette4'),
   settingsBox = document.querySelector('.settings'),
   infoBox = document.querySelector('h2'),
   heading = document.querySelector('h1'),
@@ -17,7 +13,6 @@ const colOne = document.getElementById('col1'),
 function setColors() {
   let dObj = setDirection();
   paintBackground(dObj);
-  paintHeading();
   paintPalettes();
 }
 
@@ -25,21 +20,20 @@ function setColors() {
 function paintBackground(dObj) {
   let bgCol = `${dObj.type}-gradient(${dObj.direction}${colOne.value}, ${colTwo.value})`;
   bodyBox.style.backgroundImage = bgCol;
+  paintHeading(bgCol);
   infoBox.textContent = `background-image: ${bgCol}`;
 }
 
 // set color and text shadow for heading
-function paintHeading() {
-  heading.style.color = colHeading.value;
-  heading.style.textShadow = `.5rem 1rem 2rem ${colHShadow.value}`;
+function paintHeading(bgImage) {
+  heading.style.backgroundImage = bgImage;
+  // heading.style.textShadow = `.5rem 1rem 2rem ${colHShadow.value}`;
 }
 
 // set color for icons same as for corresponding inputs
 function paintPalettes() {
   pal1.style.color = colOne.value;
   pal2.style.color = colTwo.value;
-  palHdgCol.style.color = colHeading.value;
-  palHdgShad.style.color = colHShadow.value;
 }
 
 // set direction for gradient
@@ -53,7 +47,7 @@ function setDirection() {
     type: 'linear',
     direction: bgDirection.value,
   };
-  // if last input is checked (it has bo value)
+  // if last input is checked (it has no value)
   if (!bgDirection.value) {
     // change gradient type to radial
     dObj.type = 'radial';

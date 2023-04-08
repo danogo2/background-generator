@@ -1,91 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Background Generator</title>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,600&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,600&amp;subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <div class="heading">
-        <h1>Background Generator</h1>
+      <h1 data-text="Background Generator">Background Generator</h1>
     </div>
 
     <div class="settings">
-        <h3 class="settings__heading">Settings</h3>
-        <div class="settings__box bg">
-            <h4 class="settings__heading-secondary">Background</h4>
-            <div class="settings__colors-box">
-                <div class="settings__color">
-                    <input class="visuallyhidden" type="color" value="#20df6c" id="col1">
-                    <label for="col1">
-                        <span>color 1</span>
-                        <ion-icon id="palette1" name="color-palette"></ion-icon>
-                    </label>
-                </div>
-                <div class="settings__color">
-                    <input class="visuallyhidden" type="color" value="#263dd9" id="col2">
-                    <label for="col2">
-                        <span>color 2</span>
-                        <ion-icon id="palette2" name="color-palette"></ion-icon>
-                    </label>
-                </div>
-            </div>
-
-            <div class="settings__direction-box">
-                <input type="radio" class="visuallyhidden" name="direction" id="right" value="to right, " checked>
-                <label for="right">
-                    <ion-icon name="arrow-round-forward"></ion-icon>
-                </label>
-
-                <input type="radio" class="visuallyhidden" name="direction" id="bottom" value="to bottom, ">
-                <label for="bottom">
-                    <ion-icon name="arrow-round-down"></ion-icon>
-                </label>
-
-                <input type="radio" class="visuallyhidden" name="direction" id="right-bottom" value="to right bottom, ">
-                <label for="right-bottom">
-                    <ion-icon name="arrow-round-forward" class="right-bottom"></ion-icon>
-                </label>
-
-                <input type="radio" class="visuallyhidden" name="direction" id="radial" value="">
-                <label for="radial">
-                    <ion-icon name="wifi"></ion-icon>
-                </label>
-            </div>
+      <h3 class="settings__heading">Settings</h3>
+      <div class="settings__box bg">
+        <h4 class="settings__heading-secondary">Background</h4>
+        <div class="settings__colors-box">
+          <div class="settings__color">
+            <input
+              class="visuallyhidden"
+              type="color"
+              value="#20df6c"
+              id="col1"
+            />
+            <label for="col1">
+              <span>color 1</span>
+              <ion-icon id="palette1" name="color-palette"></ion-icon>
+            </label>
+          </div>
+          <div class="settings__color">
+            <input
+              class="visuallyhidden"
+              type="color"
+              value="#263dd9"
+              id="col2"
+            />
+            <label for="col2">
+              <span>color 2</span>
+              <ion-icon id="palette2" name="color-palette"></ion-icon>
+            </label>
+          </div>
         </div>
 
-        <div class="settings__box hd">
-            <h4 class="settings__heading-secondary">Heading</h4>
-            <div class="settings__colors-box">
-                <div class="settings__color">
-                    <input class="visuallyhidden" type="color" value="#ffffff" id="col3">
-                    <label for="col3">
-                        <span>color</span>
-                        <ion-icon id="palette3" name="color-palette"></ion-icon>
-                    </label>
-                </div>
-                <div class="settings__color">
-                    <input class="visuallyhidden" type="color" value="#333333" id="col4">
-                    <label for="col4">
-                        <span>shadow</span>
-                        <ion-icon id="palette4" name="color-palette"></ion-icon>
-                    </label>
-                </div>
-            </div>
-        </div>
+        <div class="settings__direction-box">
+          <input
+            type="radio"
+            class="visuallyhidden"
+            name="direction"
+            id="right"
+            value="to right, "
+            checked
+          />
+          <label for="right">
+            <ion-icon name="arrow-round-forward"></ion-icon>
+          </label>
 
+          <input
+            type="radio"
+            class="visuallyhidden"
+            name="direction"
+            id="bottom"
+            value="to bottom, "
+          />
+          <label for="bottom">
+            <ion-icon name="arrow-round-down"></ion-icon>
+          </label>
+
+          <input
+            type="radio"
+            class="visuallyhidden"
+            name="direction"
+            id="right-bottom"
+            value="to right bottom, "
+          />
+          <label for="right-bottom">
+            <ion-icon
+              name="arrow-round-forward"
+              class="right-bottom"
+            ></ion-icon>
+          </label>
+
+          <input
+            type="radio"
+            class="visuallyhidden"
+            name="direction"
+            id="radial"
+            value=""
+          />
+          <label for="radial">
+            <ion-icon name="wifi"></ion-icon>
+          </label>
+        </div>
+      </div>
     </div>
 
     <div class="info">
-        <h2></h2>
+      <h2></h2>
     </div>
     <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
