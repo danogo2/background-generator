@@ -1,244 +1,270 @@
 /* Usibility classes */
 /* class to hide elements taken from html5 boilerplate */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
 }
 
 /* Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    box-sizing: border-box;
-    font-size: 1.6rem;
-    height: 100vh;
-    font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: #333;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  height: 100vh;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #333;
 }
 
 /* Heading */
 .heading {
-    width: 100%;
-    max-width: 114rem;
-    margin: 0 auto;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
+  width: 100%;
+  max-width: 114rem;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
 }
 
 h1 {
-    font-size: 10rem;
-    text-transform: uppercase;
-    letter-spacing: 3.5rem;
-    color: #fff;
-    text-shadow: .5rem 1rem 2rem #333;
+  padding: 0;
+  font-size: 10rem;
+  text-transform: uppercase;
+  letter-spacing: 3.5rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+    1px 1px 0 rgba(0, 0, 0, 0.25), 3px 3px 3px rgba(0, 0, 0, 0.25),
+    10px 10px 20px rgba(0, 0, 0, 0.5), 20px 40px 40px rgba(0, 0, 0, 0.5); */
+  position: relative;
 }
+
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+    1px 1px 0 rgba(0, 0, 0, 0.25), 3px 3px 3px rgba(0, 0, 0, 0.25),
+    4px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5),
+    20px 40px 40px rgba(0, 0, 0, 0.5);
+} */
 
 /* Current background infoBox */
 .info {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 2rem;
-    padding: 2rem;
-    box-shadow: 0 .3rem .4rem rgba(3, 3, 3, .8),
-                0 .1rem .3rem rgba(3, 3, 3, .6);
-    background-color: #f7f7f7;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0.3rem 0.4rem rgba(3, 3, 3, 0.8),
+    0 0.1rem 0.3rem rgba(3, 3, 3, 0.6);
+  background-color: #f7f7f7;
 }
 
 /* Settings Panel */
 .settings {
-    position: absolute;
-    top: 20%;
-    left: 0;
-    width: 12rem;
-    background-color: #f7f7f7;
-    box-shadow: .2rem .2rem .9rem rgba(3, 3, 3, .8);
-    padding: 1rem .6rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 12rem;
+  background-color: #f7f7f7;
+  box-shadow: 0.2rem 0.2rem 0.9rem rgba(3, 3, 3, 0.8);
+  padding: 1rem 0.6rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .settings__box {
-    padding-top: 2rem;
-    display: flex;
-    flex-flow: column nowrap;
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .settings__heading {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 .settings__heading::after {
-    content: '';
-    display: block;
-    width: 90%;
-    height: 1px;
-    background-color: #333;
-    margin: 0 auto;
-    margin-top: .6rem;
+  content: '';
+  display: block;
+  width: 90%;
+  height: 1px;
+  background-color: #333;
+  margin: 0 auto;
+  margin-top: 0.6rem;
 }
 
 .settings__heading-secondary {
-    margin: 0 0 .6rem 0;
-    width: 100%;
+  margin: 0 0 0.6rem 0;
+  width: 100%;
 }
 
 .settings__box {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
 }
 
 .settings__color label {
-    cursor: pointer;
-    display: inline-block;
-    padding: .3rem .5rem 0 .5rem;
-    position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3rem 0.5rem 0 0.5rem;
+  position: relative;
 }
 
 .settings__color label span {
-    position: relative;
-    top: -.6rem;
+  position: relative;
+  top: -0.6rem;
 }
 
 ion-icon[name='color-palette'] {
-    font-size: 2.4rem;
-    transition: transform .3s ease;
+  font-size: 2.4rem;
+  transition: transform 0.3s ease;
 }
 
-
 .settings__color:hover ion-icon[name='color-palette'] {
-    transform: scale(1.2);
-    cursor: pointer;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 input[type='color'] {
-    opacity: 0;
+  opacity: 0;
 }
 
 .settings__color input.visuallyhidden:active + label,
 .settings__color input.visuallyhidden:focus + label {
-    box-shadow: 0 .2rem .3rem rgba(3, 3, 3, .8),
-                0 .1rem .2rem rgba(3, 3, 3, .6);
+  box-shadow: 0 0.2rem 0.3rem rgba(3, 3, 3, 0.8),
+    0 0.1rem 0.2rem rgba(3, 3, 3, 0.6);
 }
 
 .settings__direction-box {
-    margin-top: .2rem;
-    padding: .4rem;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
+  margin-top: 0.2rem;
+  padding: 0.4rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .settings__direction-box label {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .settings__direction-box label ion-icon.right-bottom .icon-inner {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .settings__direction-box label ion-icon {
-    font-size: 2rem;
-    transition: transform .3s ease;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
 }
 
 .settings__direction-box label:hover ion-icon {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .settings__direction-box input.visuallyhidden:checked + label > ion-icon,
 .settings__direction-box input.visuallyhidden:active + label > ion-icon,
 .settings__direction-box input.visuallyhidden:focus + label > ion-icon {
-    box-shadow: 0 .2rem .3rem rgba(3, 3, 3, .8),
-                0 .1rem .2rem rgba(3, 3, 3, .6);
+  box-shadow: 0 0.2rem 0.3rem rgba(3, 3, 3, 0.8),
+    0 0.1rem 0.2rem rgba(3, 3, 3, 0.6);
 }
 
 /* Media queries */
 @media only screen and (max-width: 75em) {
-       h1 {
-           font-size: 8rem;
-           letter-spacing: 2.5rem;
-       } 
+  h1 {
+    font-size: 8rem;
+    letter-spacing: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 56.25em) {
-    h1 {
-        font-size: 5rem;
-        letter-spacing: 2rem;
-    } 
+  h1 {
+    font-size: 5rem;
+    letter-spacing: 2rem;
+  }
 }
 
 @media only screen and (max-width: 37.5em) {
-    html {
-        font-size: 50%;
-    }
-    
-    h1 {
-        font-size: 3.5rem;
-        letter-spacing: 1rem;
-    }
+  html {
+    font-size: 50%;
+  }
 
-    h3 {
-        display: none;
-    }
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+  }
 
-    .info {
-        width: 100%;
-        margin-top: 0;
-    }
+  h3 {
+    display: none;
+  }
 
-    .settings {
-        top: auto;
-        bottom: 0;
-        width: 100%;
-        font-size: 2rem;
-    }
+  .info {
+    width: 100%;
+    margin-top: 0;
+  }
 
-    .settings__box {
-        flex-flow: row wrap;
-        padding: 0;
-    }
+  .settings {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    font-size: 2rem;
+  }
 
-    .bg {
-        flex: 5;
-    }
+  .settings__box {
+    flex-flow: row wrap;
+    padding: 0;
+  }
 
-    .hd {
-        flex: 3;
-    }
+  .bg {
+    flex: 5;
+  }
 
-    .settings__colors-box {
-        display: flex; 
-        width: 100%;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-    }
+  .hd {
+    flex: 3;
+  }
 
-    .settings__box:nth-of-type(2) .settings__colors-box {
-        flex-flow: column nowrap;
-    }
+  .settings__colors-box {
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+
+  .settings__box:nth-of-type(2) .settings__colors-box {
+    flex-flow: column nowrap;
+  }
 }
